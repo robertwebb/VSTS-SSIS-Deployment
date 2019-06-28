@@ -11,6 +11,12 @@ pool:
 
 steps:
 
+
+- task: GenerateReleaseNotes@3
+  inputs:
+    outputfile: 'ReleaseNotes/md'
+    templateLocation: 'File'
+    generateForOnlyPrimary: False
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
